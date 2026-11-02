@@ -1,0 +1,17 @@
+# Build output and IDE files
+bin/
+obj/
+.idea/
+.vs/
+*.user
+
+# Packaged releases
+dist/
+
+# Never commit game code or assets
+decompiled/
+*.assets
+Assembly-CSharp.dll
+
+# Python cache
+__pycache__/
