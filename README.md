@@ -44,16 +44,29 @@ playing.
 
 ## Installing
 
-Download the zip from [Releases](../../releases) and follow `ParkasaurusResurrection-INSTALL.txt`
-inside it. In short:
+1. **Download** `ParkasaurusResurrection-<version>.zip` from the latest release on the
+   [Releases](../../releases) page (under "Assets").
+2. **Open the game folder**: in Steam, right-click Parkasaurus > **Manage > Browse local files**.
+   A folder with `Parkasaurus.exe` opens.
+3. **Go one folder up**, to the `common` folder that contains the `Parkasaurus` folder:
+   - Windows: usually `C:\Program Files (x86)\Steam\steamapps\common`
+   - Linux: usually `~/.local/share/Steam/steamapps/common`
+4. **Extract the zip there.** Its `Parkasaurus` folder merges with the game's folder; allow merging
+   and replacing files. Afterwards `winhttp.dll` and a `BepInEx` folder sit next to `Parkasaurus.exe`.
+5. **Linux (Proton) only:** in Steam, right-click Parkasaurus > **Properties > General**, and under
+   *Launch options* enter:
+   ```
+   WINEDLLOVERRIDES="winhttp=n,b" %command%
+   ```
+6. **Start the game.** Under **Options** there is a new tab **Resurrection**: the mod works.
 
-1. Extract the zip into the folder that *contains* the Parkasaurus game folder (usually
-   `steamapps/common`). The zip includes BepInEx.
-2. Linux (Proton) only: set the Steam launch options to `WINEDLLOVERRIDES="winhttp=n,b" %command%`.
-3. Start the game.
+**Updating:** repeat steps 1 to 4 with the new zip. Your settings stay
+(`BepInEx/config/nl.alber.parkasaurusresurrection.cfg` is not in the zip).
 
-To remove the mod, delete `winhttp.dll` from the game folder. Saves made with the mod still load
-without it.
+**Removing:** delete `winhttp.dll` next to `Parkasaurus.exe` (and the launch option on Linux). Saves
+made with the mod still load without it.
+
+The zip also contains these instructions as `ParkasaurusResurrection-INSTALL.txt`.
 
 ## Building
 
@@ -69,6 +82,11 @@ The build copies the plugin into the game's `BepInEx/plugins` folder.
 
 The `tools` folder also has a few helper scripts used during development (save editing, exporting a
 dinosaur model to Blender, dumping UI trees); they read your own game install.
+
+## Credits
+
+- **ajgrasmeijer**: idea, design, testing and playing far too many hours of Parkasaurus.
+- **Claude** (Anthropic): co-author of the code, written together with ajgrasmeijer in Claude Code.
 
 ## License
 

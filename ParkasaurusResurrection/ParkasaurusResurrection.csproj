@@ -4,6 +4,8 @@
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>ParkasaurusResurrection</AssemblyName>
     <LangVersion>latest</LangVersion>
+    <!-- Don't put the local project path (with the user name) into the DLL -->
+    <PathMap>$(MSBuildProjectDirectory)=ParkasaurusResurrection</PathMap>
     <!-- Override with: dotnet build -p:GameDir=/path/to/Parkasaurus -->
     <GameDir Condition="'$(GameDir)' == ''">$(HOME)/.local/share/Steam/steamapps/common/Parkasaurus</GameDir>
     <ManagedDir>$(GameDir)/Parkasaurus_Data/Managed</ManagedDir>
